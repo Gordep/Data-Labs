@@ -2,12 +2,12 @@
 """
 Created on Mon Feb  4 21:11:42 2019
 
-Course: CS-2302 Data Stuctures
+Course: CS-2302 Data-Stuctures
 Author: Julian Gonzalez
 Assignment: Lab 1 Drawing figures with recursion
 Intstuctor: Olac Fuentes
 T.A's: Anindita Nath, Maliheh Zargaran
-Purpose: The purpose of this program is to draw different figures using matplotlib all recusively 
+Purpose: The purpose of this program is to draw different figures using matplotlib all done recusively 
 
 """
 
@@ -15,12 +15,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-def draw_squares(ax,n,p,w):
+def draw_squares(ax,n,sLeft,sRight,w):
     if n>0:
-        i1 = [1,2,3,0,1]
-        q = p*w + p[i1]*(1-w)
-        ax.plot(p[:,0],p[:,1],color='k')
-        draw_squares(ax,n-1,q,w)
+        sL1 = sLeft/2+w
+        sR1 = sRight/2+w
+        sL2 = sLeft/2-w
+        sR2 = sRight/2-w
+        
+        ax.plot(sLeft-w,sRight-w,color='k')
+        
+        draw_squares(ax,n-1,sL1,sR1,w)
+        draw_squares(ax,n-1,sL1,sR2,w)
+        draw_squares(ax,n-1,sL2,sR1,w)
+        draw_squares(ax,n-1,sL2,sR2,w)
 
 def circle(center,rad): #Utulizes the circle function porivided in class # used for question 2 and 4
     n = int(4*rad*math.pi)
@@ -73,15 +80,46 @@ def draw_manyCircles(ax,n,center,radius,w): # same parameters as draw_circles bu
 
 ####################
 #Question 1 
+        ## I was unable to get the code to run correctly
 plt.close("all") 
+#a)
 orig_size = 100
-p = np.array([[0,0],[0,orig_size],[orig_size,orig_size],[orig_size,0],[0,0]])
+#p = np.array([[0,0],[0,orig_size],[orig_size,orig_size],[orig_size,0],[0,0]])
+p = np.array([[-orig_size, orig_size],[-orig_size,-orig_size],[orig_size,-orig_size],[orig_size,orig_size],[-orig_size,orig_size]])
+sLeft = p[:,0]
+sRight = p[:,1]
 fig, ax = plt.subplots()
-draw_squares(ax,15,p,.8)
+##draw_squares(ax,15,sLeft,sRight,orig_size)
 ax.set_aspect(1.0)
 ax.axis('off')
 plt.show()
-fig.savefig('squares.png')
+fig.savefig('Question1a.png')
+#b)
+orig_size = 100
+#p = np.array([[0,0],[0,orig_size],[orig_size,orig_size],[orig_size,0],[0,0]])
+#p = np.array([[-orig_size, orig_size],[-orig_size,-orig_size],[orig_size,-orig_size],[orig_size,orig_size],[-orig_size,orig_size]])
+sLeft = p[:,0]
+sRight = p[:,1]
+fig, ax = plt.subplots()
+##draw_squares(ax,15,sLeft,sRight,orig_size)
+ax.set_aspect(1.0)
+ax.axis('off')
+plt.show()
+fig.savefig('Question1b.png')
+
+#c)
+orig_size = 100
+#p = np.array([[0,0],[0,orig_size],[orig_size,orig_size],[orig_size,0],[0,0]])
+#p = np.array([[-orig_size, orig_size],[-orig_size,-orig_size],[orig_size,-orig_size],[orig_size,orig_size],[-orig_size,orig_size]])
+sLeft = p[:,0]
+sRight = p[:,1]
+fig, ax = plt.subplots()
+##draw_squares(ax,15,sLeft,sRight,orig_size)
+ax.set_aspect(1.0)
+ax.axis('off')
+plt.show()
+fig.savefig('Question1c.png')
+
 
 ####################
 #Question 2 
