@@ -3,6 +3,10 @@
 Created on Thu Mar  7 21:07:47 2019
 
 @author: Julian
+Assignment: Lab 3
+Instructor: Fuentes, Olac
+T.A: Nath, Anidita
+
 """
 
 
