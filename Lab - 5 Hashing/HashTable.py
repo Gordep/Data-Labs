@@ -3,6 +3,9 @@
 Created on Sun Mar 31 19:54:48 2019
 
 @author: Julian
+Assignment: Lab 5
+Instructor: Fuentes, Olac
+T.A: Nath, Anidita
 """
 import time
 import math
