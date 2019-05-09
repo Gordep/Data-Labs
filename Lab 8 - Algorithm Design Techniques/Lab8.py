@@ -18,10 +18,10 @@ import time
 def discover(iden):
     x = 200
     for i in range(x):
-        y = random.randint(0,len(iden)-1)
+        y = random.randint(0,len(iden)-1)#random number from 0 to length of the Trig identity list
         z = random.randint(0,len(iden)-1)
-        if y != z:
-            if testIden(iden[y],iden[z]):
+        if y != z: #check if the idicies are not equal
+            if testIden(iden[y],iden[z]):#call testIden function
                 print(f"Try {i}. {iden[y]} and {iden[z]} are equal")
 
 def testIden(f1,f2,tries=1000,tolerance=0.0001):#used code provided in class modified to work for trig identities
