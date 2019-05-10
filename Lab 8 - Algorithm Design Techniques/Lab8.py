@@ -11,7 +11,7 @@ import random
 import math
 import numpy as np
 import time
-#from mpmath import * #not needed
+from mpmath import * #not needed
 #import mpmath #not needed
 
 #used to find which trig identities are equal
